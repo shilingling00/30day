@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    width: 100%;
+    height: 100%;
+    background: #018DED url("http://unsplash.it/1500/1000?image=881&blur=50") bottom center;
+    background-size: cover;
+}
+.clock{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 20px solid white;
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.1);
+    position: relative;
+    margin: 300px auto;
+    padding: 20px;
+}
+.clock .clock_face{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.clock .clock_face .clock_number{
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+.clock .clock_face .clock_number p{
+    font-size: 30px;
+    position: absolute;
+}
+.clock .clock_face .clock_number p:nth-child(1){
+    top:0;
+    width: 100%;
+    text-align: center;
+}
+.clock .clock_face .clock_number p:nth-child(2){
+    top: 50%;
+    width: 100%;
+    text-align: right;
+    margin-top: -1.5rem;
+}
+.clock .clock_face .clock_number p:nth-child(3){
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+.clock .clock_face .clock_number p:nth-child(4){
+    top: 50%;
+    width: 100%;
+    text-align: left;
+    margin-top: -1.5rem;
+}
+.clock .clock_face .hand{
+    background: #fff;
+    position: absolute;
+    bottom:50%;
+    left:50%;
+    transform-origin:50% 100%;
+}
+.clock .clock_face .hand.hour_hand{
+    width: 8px;
+    height: 30%;
+    margin-left: -4px;
+}
+.clock .clock_face .hand.minute_hand{
+    width: 6px;
+    height: 35%;
+    margin-left: -3px;
+}
+.clock .clock_face .hand.second_hand{
+    width: 4px;
+    height: 40%;
+    background: red;
+    margin-left: -2px;
+}
