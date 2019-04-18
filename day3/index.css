@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --spacing:10px;
+    --blur:10px;
+    --basecolor:#ffc600;
+    --fontsize:10px;
+}
+body{
+    background: #193549;
+    color:white;
+    text-align: center;
+}
+h2{
+    font-size: 40px;
+}
+.control{
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    font-size: 30px;
+}
+.control .spance{
+    display: inline-block;
+    margin: 0 15px;
+}
+.control .spance input{
+    width: 100px;
+}
+.control .blur{
+    display: inline-block;
+    margin: 0 15px;
+}
+.control .blur input{
+    width: 100px;
+}
+.control .color{
+    display: inline-block;
+    margin: 0 15px;
+}
+.control .imgbox{
+    margin: 100px auto;
+
+}
+.control .imgbox img{
+    /*width: calc(30*var(--fontsize));*/
+    /*height: calc(20*var(--fontsize));*/
+    width: 800px;
+    height: 600px;
+    padding: var(--spacing);
+    filter: blur(var(--blur));
+    background-color: var(--basecolor);
+}

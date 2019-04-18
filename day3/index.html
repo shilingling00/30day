@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<h2>Update CSS Variables with JS</h2>
+<div class="control">
+    <div class="spance">
+        <span>Spancing:</span>
+        <input id="spacing" type="range" name="spacing" min="10" max="180" value="20" data-sizing="px" onchange="space()">
+    </div>
+    <div class="blur">
+        <span>Blur:</span>
+        <input id="blurs" type="range" name="blur" min="0" max="25" value="10"  onchange="blurs()">
+    </div>
+    <div class="color">
+        <span>Base Color:</span>
+        <input id="base" type="color" onchange="color()">
+    </div>
+    <div class="imgbox">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555585123148&di=e5c3c58b7d6f0ccfc3e090898f113556&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2Fd%2F552f655f0847c.jpg" alt="" id="img">
+    </div>
+</div>
+</body>
+</html>
+<script src="index.js"></script>
