@@ -6,8 +6,6 @@ function space() {
 function blurs() {
     console.log(1);
     var blur=document.querySelector('#blurs');
-    console.log(blur);
-    console.log(blur.value);
     document.body.style.setProperty('--blur',blur.value+'px')
 }
 function color() {
