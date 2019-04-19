@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.main{
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    /*相对于视窗的高度，视窗的高度是100vh*/
+    overflow: hidden;
+}
+.main .item{
+    flex:1;
+    display: flex;
+    background: #6B0F9C;
+    justify-content: center;
+    /*水平居中*/
+    align-items: center;
+    /*垂直居中*/
+    flex-direction: column;
+    /*项目的排列方向*/
+    box-shadow: inset 0 0 0 5px  rgba(0,0,0,0.1);
+    transition: font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+                flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+                background 0.2s;
+}
+.main div:nth-child(1){
+    background-image: url("https://source.unsplash.com/gYl-UtwNg_I/1500x1500");
+}
+.main div:nth-child(2){
+    background-image: url("https://source.unsplash.com/1CD3fd8kHnE/1500x1500");
+}
+.main div:nth-child(3){
+    background-image: url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d);
+}
+.main div:nth-child(4){
+    background-image: url(https://source.unsplash.com/ITjiVXcwVng/1500x1500);
+}
+.main div:nth-child(5){
+    background-image: url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
+}
+.main .item p{
+    transition: transform 0.5s;
+    /*文字运动*/
+    flex: 1;
+    font-family: 'Amatic SC', cursive;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
+}
+.main .item p:nth-child(2){
+    font-size: 40px;
+}
+.main .item p:nth-child(1){
+    transform: translateY(-100%);
+}
+.main .item p:nth-child(3){
+    transform:translateY(100%);
+}
+/*item展开后文字运动*/
+.main .item.openactive p:nth-child(1){
+    transform: translateY(0);
+    font-size: 40px;
+}
+.main .item.openactive p:nth-child(3){
+    transform: translateY(0);
+    font-size: 40px;
+}
+/*item展开*/
+.main .item.open{
+    flex: 5;
+    font-size: 80px;
+}
