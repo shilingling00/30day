@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html body {
+    background:  #ffc600;;
+}
+.searchform{
+    max-width: 400px;
+    margin: 50px auto;
+}
+.searchform .search{
+    position: relative;
+    top:5px;
+    left: -8%;
+    z-index: 99;
+    border: 10px solid #F7F7F7;
+    outline: 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+}
+.searchform  .list li{
+    border-bottom: 1px solid  #D8D8D8;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+
+}
+.searchform  .list li:nth-child(odd){
+    transform:perspective(100px) rotateX(-3deg)  translateY(3px);
+    background: linear-gradient(to top,#ffffff 0,#EFEFEF 100%);
+}
+.searchform .list li:nth-child(even){
+    transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
+    background: linear-gradient(to top,#ffffff 0,#EFEFEF 100%);
+}

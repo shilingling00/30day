@@ -1,5 +1,7 @@
 let list=document.querySelectorAll('.item');
 console.log(list);
+let op=document.getElementsByClassName('item');
+console.log(op);
 list.forEach(item=>{
     item.addEventListener('click',open)
 });

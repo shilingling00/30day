@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html{
+    background:#ffc600;;
+}
+.content{
+    max-width: 400px;
+    margin: 50px auto;
+}
+.content .search{
+    border:10px solid #F7F7F7;
+    padding: 20px;
+
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.12),
+    inset 0 0 2px rgba(0,0,0,0.19);
+    outline: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    position: relative;
+    left:-8%;
+}
+.content .list li:nth-child(odd){
+    padding: 20px;
+    background: linear-gradient(to top,#ffffff 0%,#EFEFEF 100%);
+    transform: perspective(100px)  rotateX(-3deg);
+    border-bottom: 1px solid #D8D8D8;
+    box-shadow: 0 0 10px rgba(0,0,0,0.14);
+}
+.content .list li:nth-child(even){
+    padding: 20px;
+    background: linear-gradient(to top,#ffffff 0,#EFEFEF 100%);
+    transform: perspective(100px)  rotateX(3deg) translateY(-1px);
+    border-bottom: 1px solid #D8D8D8;
+}
