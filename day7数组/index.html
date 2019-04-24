@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    const people = [
+        { name: 'Wes', year: 1988 },
+        { name: 'Kait', year: 1986 },
+        { name: 'Irv', year: 1970 },
+        { name: 'Lux', year: 2015 }
+    ];
+
+    const comments = [
+        { text: 'Love this!', id: 523423 },
+        { text: 'Super good', id: 823423 },
+        { text: 'You are the best', id: 2039842 },
+        { text: 'Ramen is my fav food ever', id: 123523 },
+        { text: 'Nice Nice Nice!', id: 542328 }
+    ];
+    //是否至少有一人年满19周岁？
+    //some()方法测试数组中是否至少有一个元素通过了由提供的函数实现的测试。返回true，说明数组中 有 满足条件的数据存在，返回false，说明数组里面没有满足条件的数组存在。
+    const full=people.some(item=>{
+        return new Date().getFullYear()-item.year>19
+    });
+    console.log(full);//true
+
+    //是否每一个人都年满19周岁？
+    //every()方法测试数组中的所有元素是否都通过了由提供的函数实现的测试。返回true，代表数组中 所有 数据都满足条件，否则，至少有一条数据不满足条件。
+    const all=people.every(item=>{
+        return new Date().getFullYear()-item.year>19
+    });
+    console.log(all);//false
+
+    //是否存在id=823423的评论？
+    //find()方法返回值的的第一个元素满足提供的测试功能在数组中。否则undefined返回。如果有满足条件对象，返回该对象，否则返回undefined 。
+    const id=comments.find(item=>{
+        return item.id==823423
+    });
+    console.log(id);//{text: "Super good", id: 823423}
+
+    //找到id=823423的评论的序列号(下标)
+    //findIndex()方法返回数组中第一个满足提供的测试函数的元素的索引。否则，它返回-1，
+    const i=comments.findIndex(item=>{
+        return item.id==823423
+    });
+    console.log(i);//1
+
+
+    //删除id=823423的评论
+    const newComments = [
+       comments.slice(0,i),
+        comments.slice(i+1)
+    ];
+    console.log(newComments);
+</script>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #mycanvas{
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+<body>
+<canvas id="mycanvas"></canvas>
+</body>
+</html>
+<script>
+    let ctx='';
+    let beginx=0;
+    let beginy=0;
+    let dragflag=false;//用于区分鼠标点击事件和鼠标移动事件
+    let hue=0;//hsl的色调初始值
+    let linewidth=60;
+    let direction=true;
+    window.onload=function () {
+        //获取canvas元素，并设置宽高
+        let mycanvas=document.getElementById('mycanvas');
+        mycanvas.width=window.innerWidth;
+        mycanvas.height=window.innerHeight;
+        ctx=mycanvas.getContext('2d');
+
+        //监听
+        mycanvas.addEventListener('mousedown',begin);
+        mycanvas.addEventListener('mousemove',move);
+        mycanvas.addEventListener('mouseup',()=>{dragflag=false});
+        mycanvas.addEventListener('mouseout',()=>{dragflag=false});
+
+        //设定初始坐标点
+        function begin(e) {
+            beginx=e.offsetX;
+            beginy=e.offsetY;
+            dragflag=true;
+        }
+
+        function move(e) {
+            if(dragflag){
+                let movex=e.offsetX;
+                let movey=e.offsetY;
+                //改变色值
+                if(hue<=360){
+                    hue++;
+                }else (
+                    hue=0
+                );
+                //设置线条颜色
+                ctx.strokeStyle=`hsl(${hue},100%,50%)`;
+                //撞墙反弹程序
+                if(linewidth>100||linewidth<10){
+                    direction=!direction;
+                }
+                if(direction){
+                    linewidth++;
+                }else {
+                    linewidth--;
+                }
+
+                ctx.lineCap='round';//笔触的形状
+                ctx.lineJoin='round';//线条相交的样式
+                ctx.lineWidth=linewidth;//线条的宽度
+                ctx.beginPath();//新建一条路径
+                ctx.moveTo(beginx,beginy);//绘制操作的的起点
+                ctx.lineTo(movex,movey);//路径的终点
+                ctx.closePath();
+                [beginx,beginy]=[movex,movey];//解构赋值
+                ctx.stroke();//绘制轮廓
+            }else {
+                return
+            }
+        }
+
+    }
+</script>
