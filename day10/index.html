@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<div class="player">
+    <video class="video_view" src="./mp4/demo.mp4"   loop>浏览器不支持</video>
+    <!--controls="controls"  如果出现该属性，则向用户显示控件，比如播放按钮。-->
+    <div class="control">
+        <div class="progress">
+            <div class="progress_filed"></div>
+        </div>
+        <button class="stop">►</button>
+        <input type="range" title="音量" class="volume" name="volume" min=0 max="1" step="0.05" value="1">
+        <input type="range" title="播放速度" class="speed" name="playbackRate" min="0.5" max="2" step="0.1" value="1">
+        <button data-step="-5"><<5</button>
+        <button data-step="5">5>></button>
+    </div>
+</div>
+</body>
+</html>
+<script src="index.js"></script>
