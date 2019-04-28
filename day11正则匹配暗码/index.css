@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container .code,.show{
+    color: lightpink;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px;
+}
+.container input{
+    outline: none;
+    text-align: center;
+    color: lightskyblue;
+}
