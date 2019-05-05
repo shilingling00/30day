@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.imgbox{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    transition: all 2s ease;
+    z-index: 99;
+}
+.imgbox:hover{
+    /*transform: scale(2);*/
+    transform: translateY(-10px);
+}
+.imgbox img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.icon{
+    margin-top: 30px;
+
+}
+.icon i{
+    display: inline-block;
+    font-size: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.icon i:hover{
+    /*font-size: 40px;*/
+}
+.icon .iconweixin:hover{
+    transform: translateY(-10px) ;
+    color: lawngreen;
+
+}
+.icon .iconGitHub:hover{
+    transform: translateY(-10px) ;
+    color: black;
+}
+.icon .iconyouxiang:hover{
+    transform: translateY(-10px) ;
+    color: yellow;
+}
+.icon  .iconweibo:hover{
+    transform: translateY(-10px) ;
+    color: red;
+}
+.icon .iconqq:hover{
+    transform: translateY(-10px) ;
+    color: #aaf0fa;
+}
+.icon  .iconfacebook:hover{
+    transform: translateY(-10px) ;
+    color: #dd8cfa;
+}
+.icon  .icontwitter:hover{
+    transform: translateY(-10px) ;
+    color: lightskyblue;
+}

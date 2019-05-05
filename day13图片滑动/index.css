@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    background: linear-gradient(silver,#ffc600);
+}
+.site-wrap{
+    max-width: 700px;
+    background: whitesmoke;
+    margin: auto;
+    padding: 40px;
+}
+p{
+    text-indent: 2em;
+    /*规定文本块中首行文本的缩进*/
+    word-break: break-all;
+    /*以让浏览器实现在任意位置的换行。*/
+}
+/*设置图片的位置*/
+.align-left{
+    float: left;
+    margin-right: 30px;
+}
+.align-right{
+    float: right;
+    margin-left: 30px;
+}
+/*所有图片处于隐藏状态*/
+.slide-in{
+    opacity: 0;
+    transition: all 0.4s;
+}
+.align-left.slide-in{
+    transform: translateX(-40%) scale(0.9);
+}
+.align-right.slide-in{
+    transform: translateX(40%) scale(0.9);
+}
+.slide-in.active{
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
