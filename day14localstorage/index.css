@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+html{
+    background: url("http://wes.io/hx9M/oh-la-la.jpg") center  no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-family: Futura,"Trebuchet MS",Arial,sans-serif;
+}
+svg{
+    fill: white;
+    background: rgba(0,0,0,0.1);
+    width: 200px;
+    padding: 20px;
+    border-radius: 50%;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+}
+.content{
+    background: rgba(255,255,255,0.95);;
+    box-shadow: 0 0 0 10px rgba(0,0,0,0.1);
+    max-width: 350px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.content .title{
+    text-align: center;
+    font-weight: 200;
+}
+.content .list li{
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding: 10px 0;
+}
+.list li input{
+    display: none;
+}
+.list li input+label::before {
+    content: '⬜️ ';
+    margin-right: 10px;
+}
+
+.list input:checked + label::before {
+    content: '🌮';
+}
+.content .additem{
+    margin-top: 20px;
+}
+.content .additem input{
+    outline: none;
+    padding: 10px;
+    border: 1px  solid rgba(0,0,0,0.1);
+}
+.content .button{
+
+}
+.content .button button{
+    padding: 1px 7px 2px;
+    align-items: flex-start;
+}
