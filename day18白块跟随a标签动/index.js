@@ -23,4 +23,4 @@ function hightlight(e) {
 window.onresize=function () {
     location.reload();//用于重新加载当前文档
     Span.style.display='none';
-}
+};

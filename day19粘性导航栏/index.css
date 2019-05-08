@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+html{
+    background: #eeeeee;
+    font-size: 20px;
+    font-weight: 200;
+}
+header{
+    background: url("http://wes.io/iEgP/wow-so-deep.jpg") bottom center no-repeat;
+    height: 50vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header h1{
+    color: white;
+    font-size: 7vw;
+    text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
+}
+nav{
+    background: black;
+    position: relative;
+    top:0;
+    z-index: 99;
+}
+#main ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+li.logo{
+    max-width: 0;
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 30px;
+    background: white;
+    transition: all 0.5s;
+
+}
+li.logo a{
+    color: black;
+}
+#main ul li{
+    flex: 1;
+}
+ul li a{
+    display: inline-block;
+    padding: 20px;
+    color: white;
+    text-transform: uppercase;
+}
+.site-wrap{
+    max-width: 700px;
+    margin: 70px  auto;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.05);
+    transform: scale(0.98);
+}
+/* 滚动的高度大于导航栏的offsettop*/
+.fixnav li.logo{
+    max-width: 500px;
+}
+.fixnav nav{
+    position: fixed;
+    width: 100%;
+}
+.fixnav .site-wrap{
+    transform: scale(1);
+}
