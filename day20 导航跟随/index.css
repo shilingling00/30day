@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+html{
+    background: linear-gradient(45deg, hsla(340, 100%, 55%, 1) 0%, hsla(340, 100%, 55%, 0) 70%), linear-gradient(135deg, hsla(225, 95%, 50%, 1) 10%, hsla(225, 95%, 50%, 0) 80%), linear-gradient(225deg, hsla(140, 90%, 50%, 1) 10%, hsla(140, 90%, 50%, 0) 80%), linear-gradient(315deg, hsla(35, 95%, 55%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);
+    min-height: 100vh;
+}
+nav{
+    position: relative;
+}
+.arrowbox{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background: #ffffff;
+    border-radius: 4px;
+    /*transform-origin: 50%  0;*/
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+}
+/*箭头*/
+.arrow{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: white;
+    transform: translateY(-50%)  rotate(45deg);
+}
+.navlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navlist>li{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.navlist>li> a{
+    color: yellow;
+    font-size: 20px;
+    padding: 10px 20px;
+    background: rgba(0,0,0,0.2);
+    display: inline-block;
+    margin: 20px;
+    border-radius: 5px;
+}
+.drop{
+    opacity: 0;
+    position: absolute;
+    overflow: hidden;
+    padding: 20px;
+    top:-20px;
+    border-radius: 2px;
+    transform: translateY(100px);
+    display: none;
+    background: white;
+}
+ .one {
+     min-width: 500px;
+}
+ .two{
+     opacity: 0;
+     min-width: 300px;
+ }
+ .two li{
+     border-bottom: 1px  solid  rgba(0,0,0,0.2);
+     padding: 10px  0;
+ }
+ .two li a{
+     color: #ffc600;
+ }
+ .three{
+     min-width: 200px;
+ }
+ .three li{
+     border-bottom: 1px solid rgba(0,0,0,0.2);
+     padding: 10px  0;
+ }
+ .three li a{
+     color: white;
+ }
+ a.button[href*=twitter]{
+     background: #019FE9;
+ }
+a.button[href*=facebook]{
+    background: #3B5998;
+}
+a.button[href*=weixin]{
+    background: #dd8cfa;
+}
+a.button[href*=weibo]{
+    background: #ffc600;
+}
+
+/*鼠标滑入添加类*/
+.enter .drop{
+    display: block;
+}
+.enter-active .drop{
+    opacity: 1;
+}
+.arrowbox.open{
+    opacity: 1;
+}
