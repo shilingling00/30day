@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    background: url("https://source.unsplash.com/NFs6dRTBgaM/2000x2000") fixed;
+    background-size: cover;
+
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.items{
+    width: 100%;
+    height: 80vh;
+    padding: 100px;
+    border: 1px solid #cccccc;
+    background: rgba(255,255,255,0.1);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    /*不折行*/
+    perspective: 500px;
+    font-size: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    transform: scale(0.98);
+}
+.items.active{
+    background: rgba(255,255,255,0.3);
+    cursor: grabbing;
+    transform: scale(1);
+}
+.item{
+    width: 200px;
+    height: calc(100% - 40px);
+    font-size: 80px;
+    font-weight: 100;
+    color: rgba(0,0,0,0.15);
+    box-shadow: inset 0 0 0 10px rgba(0,0,0,0.15);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/*n 和 n + 9 的 item的颜色相同*/
+.item:nth-child(9n+1) {
+    background: dodgerblue;
+}
+
+.item:nth-child(9n+2) {
+    background: goldenrod;
+}
+
+.item:nth-child(9n+3) {
+    background: paleturquoise;
+}
+
+.item:nth-child(9n+4) {
+    background: gold;
+}
+
+.item:nth-child(9n+5) {
+    background: cadetblue;
+}
+
+.item:nth-child(9n+6) {
+    background: tomato;
+}
+
+.item:nth-child(9n+7) {
+    background: lightcoral;
+}
+
+.item:nth-child(9n+8) {
+    background: darkslateblue;
+}
+
+.item:nth-child(9n+9) {
+    background: rebeccapurple;
+}
+/*偶数*/
+.item:nth-child(even){
+    transform: scaleX(1.31) rotateY(40deg);
+}
+/*奇数*/
+.item:nth-child(odd){
+    transform: scaleX(1.31)  rotateY(-40deg);
+}
