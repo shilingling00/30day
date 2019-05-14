@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #container{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+
+</div>
+</body>
+</html>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ecnCVwkd3FPlLNYjOkGdjLl4NKKmkoTZ"></script>
+<script>
+    var map=new BMap.Map('container');//创建地图实例
+    var point=new BMap.Point(116.404, 39.915);//创建点坐标
+    map.centerAndZoom(point,15);//初始化地图，创建中心点和地图级别
+
+    var mapStyle={style:'midnight'};
+    map.setMapStyle(mapStyle);//设置底图颜色样式。
+
+    //借助个性地图编辑工具，通过改变地图元素的颜色、亮度、饱和度、文本标注填充色、文本标注等生成样式配置json
+    var mystylejson=[
+        {
+            "featureType": "land",
+            "elementType": "geometry",
+            "stylers": {
+                "color": "#e7f7fc"
+            }
+        },
+        {
+            "featureType": "water",
+            "elementType": "all",
+            "stylers": {
+                "color": "#96b5d6"
+            }
+        },
+        {
+            "featureType": "continent",
+            "elementType": "all",
+            "stylers": {
+                "color": "#8e7cc3ff"
+            }
+        }
+    ];
+    map.setMapStyle({stylejson:mystylejson});
+
+    //在两点之间创建6像素宽的蓝色折线
+    var polyline = new BMap.Polyline([
+            new BMap.Point(116.399, 39.910),
+            new BMap.Point(116.405, 39.920)
+        ],
+        {strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5}
+    );
+    map.addOverlay(polyline);
+
+
+
+
+    map.enableScrollWheelZoom(true);//开启鼠标滚轮缩放，默认是关闭的
+
+    var types={type:BMAP_NAVIGATION_CONTROL_SMALL};//表示显示小型的平移缩放控件
+    map.addControl(new BMap.NavigationControl(types));//平移缩放控件，PC端默认位于地图左上方
+
+    map.addControl(new BMap.OverviewMapControl());//是一个可折叠的缩略地图，默认位于地图右下方
+
+    var  ops={offset:new  BMap.Size(150,35)};//偏移值
+    map.addControl(new BMap.ScaleControl(ops ));//比例尺，默认位于地图左下方
+    map.addControl(new BMap.MapTypeControl());//地图类型，默认位于地图右上方
+    map.setCurrentCity('北京')
+
+    var maker=new BMap.Marker(point);//创建图标
+    map.addOverlay(maker);//将图标添加到地图中
+
+</script>
