@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+/*左侧导航栏*/
+.leftmenu{
+    width: 230px;
+    min-height: 100vh;
+    height: 100%;
+    background: #1e2026;
+    float: left;
+    overflow: hidden;
+}
+.toptitle{
+    width: 230px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #bdc2c8;
+    text-align: center;
+}
+.downcontent{
+    position: relative;
+    width: 230px;
+}
+.menulist{
+    width: 230px;
+}
+.menulist li{
+    background: transparent;
+    width: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+/*鼠标滑过li出现橘色线条*/
+.menulist li a.lines{
+    border-left: 5px solid #FF9966;
+}
+/*没有下拉菜单背景变色*/
+.menulist li a.bk{
+    background: #FF9966;
+    color: white;
+}
+/*下拉后字体变色*/
+.menulist li.active a{
+    color: white;
+}
+.menulist li a{
+    display: block;
+    height: 56px;
+    line-height: 56px;
+    padding: 0 10px  0 20px;
+    color: rgb(176,176,178);
+    box-sizing: border-box;
+    border-left: 5px solid #1e2026;
+}
+.menulist li a i{
+    float: left;
+}
+
+.menulist li span{
+    /*float: left;*/
+    padding-left: 25px;
+}
+.menulist li  i.iconyoujiantou,.menulist li  i.icondownarrow{
+    display: inline-block;
+    float: right;
+    color: #B0B09F;
+    font-size: 12px;
+    margin-right: 15px;
+}
+.menulist li ul{
+    display: none;
+    width: 100%;
+    padding: 5px 0;
+    padding-inline-start: 0px;
+}
+.menulist li.active ul{
+    display: block;
+}
+.menulist li ul li{
+    background: #15161b;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px 0 55px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+}
+/*二级菜单变色*/
+.menulist li ul li.click{
+    background:#FF9966 ;
+}
+
+/*右侧内容*/
+.rightcontent{
+    width: calc(100% - 230px);
+    min-height: 100vh;
+    float: left;
+}
+/*头部栏*/
+.topnav{
+    height: 50px;
+    background: #ffffff;
+    border-bottom: 1px solid #f6f6f6;
+    position: relative;
+    z-index: 1;
+    /*overflow: hidden;*/
+    /*清除浮动很重要啊！！！*/
+}
+.topnav .shrinkbut{
+    height: 50px;
+    padding: 0 10px;
+    float: left;
+    position: relative;
+}
+.topnav .shrinkbut .hoverbox{
+    position: absolute;
+    top:0;
+    height: 2px;
+    width: 0;
+    background: #000;
+}
+.topnav .shrinkbut ul li{
+    height: 50px;
+    line-height: 50px;
+    color: #333;
+    font-size: 18px;
+    font-weight: 800;
+    float: left;
+    margin: 0 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+.topnav .shrinkbut ul li .tips{
+    display: inline-block;
+    min-width: 70px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    position: absolute;
+    top:45px;
+    left: -5px;
+    background: paleturquoise;
+    color: #ffffff;
+    font-size: 14px;
+    display: none;
+}
+.topnav .shrinkbut ul li:hover .tips{
+    display: block;
+}
+.topnav .rightnav{
+    float: right;
+    padding: 10px;
+    height: 50px;
+    position: relative;
+
+}
+.topnav .rightnav .hoverbox{
+    width: 0;
+    height: 2px;
+    position: absolute;
+    top:0;
+    background: #000;
+}
+.topnav .rightnav ul li{
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    color: #333;
+    padding: 0 20px;
+    position: relative;
+}
+.topnav .rightnav ul li:nth-child(3) i{
+    height: 50px;
+    line-height: 50px;
+}
+.topnav .rightnav ul li:nth-child(3) ul{
+    min-width: 96px;
+    position: absolute;
+    top:45px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px  0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+    z-index: 99;
+    display: none;
+}
+.topnav .rightnav ul li:nth-child(3) ul li {
+    height: 40px;
+    line-height: 40px;
+    color: #333333;
+    padding: 0 20px;
+    font-size: 14px;
+}
+.topnav .rightnav ul li:nth-child(3):hover .down{
+    display: block;
+}
+.topnav .rightnav ul li .tips{
+    display: inline-block;
+    min-width: 70px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    position: absolute;
+    top:45px;
+    left: -5px;
+    background: paleturquoise;
+    color: #ffffff;
+    font-size: 14px;
+    opacity: 0;
+}
+.topnav .rightnav ul li:hover .tips{
+    opacity: 1;
+    z-index: 99;
+}
+/*切换栏*/
+.rightcontent .title{
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #f0f0f0;
+    /*overflow: hidden;*/
+    box-sizing: border-box;
+    z-index: -1;
+}
+.title .icondbarrow-down,.title .iconshuangjiantou,.title .icondownarrow{
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-right: 1px solid #f6f6f6;
+    float: left;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    position: relative;
+}
+
+.title .home{
+    float: left;
+    width: 300px;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+}
+.title .home .bighome{
+    width: 300px;
+    height: 40px;
+    margin-left: 0;
+}
+.title .home .homebox{
+    background: #f6f6f6;
+    border-right: #f6f6f6;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    cursor: pointer;
+    position: relative;
+    float: left;
+
+}
+.title .home .homebox .hoverbox{
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top:0;
+    left: 0;
+    background: #000000;
+}
+.title .icondownarrow .close{
+    position: absolute;
+    top:40px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 5px  0;
+    min-width: 140px;
+    box-shadow: 0 2px 4px  rgba(0,0,0,0.12);
+    display: none;
+}
+.title .icondownarrow .close li{
+    font-size: 14px;
+}
+.title .icondownarrow:hover .close{
+    display: block;
+}
