@@ -292,3 +292,39 @@
 .title .icondownarrow:hover .close{
     display: block;
 }
+
+.chart{
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(48,48,48);
+    padding: 10px;
+}
+.chartbox{
+    padding: 10px;
+}
+.chartbox .rowone{
+    height: 330px;
+    position: relative;
+}
+
+.chartbox .rowone #chartone{
+    width: 49%;
+    height: 330px;
+    float: left;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #2a2a2a;
+    margin-right: 2%;
+    /*position: absolute;*/
+    /*top:0;*/
+    /*left: 0;*/
+}
+.chartbox .rowone #charttwo{
+    width: 49%;
+    height: 330px;
+    float: left;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #2a2a2a;
+    /*position: absolute;*/
+    /*top:0;*/
+    /*left: 0;*/
+}
