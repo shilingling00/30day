@@ -81,7 +81,7 @@ chartone.setOption({
         axisLabel:{
           color: '#ffffff'
         },
-        axisLine:{
+        axisLine:{//坐标轴轴线
             lineStyle:{
                 color:'white'
             }
@@ -116,7 +116,7 @@ chartone.setOption({
         itemStyle:{
             normal:{
                 color:'#39768E',//改变折线点的颜色
-                symbolSize:100,
+                //symbolSize:100,
                 lineStyle:{
                     color:'#39768E'//修改折线的颜色
                 }
@@ -220,5 +220,219 @@ charttwo.setOption({
 
         },
 
+    ]
+});
+
+var chartthree=echarts.init(document.getElementById('chartthree'));
+chartthree.setOption({
+    legend:{
+       // orient:'vertical',
+        x:'left',
+        data:['联盟广告','视频广告','搜索引擎'],
+        textStyle:{//图例字体颜色
+            color:'#fff'
+        }
+    },
+    tooltip:{
+      trigger:'item',
+        formatter:'{a}<br/>{b}:{c}({d}%)'//{a}（系列名称,series中的name），{b}（数据项名称），{c}（数值）, {d}（百分比）
+    },
+    series:[
+        {
+            name:'访问来源',
+            type:'pie',
+            radius:['50%','70%'],//环形饼状图
+            color:['#FF973C','#5494FF','#06901A'],
+            avoidLabelOverlap:false,//文字在环形内部居中，强制所有标签放在中心位置
+            label:{
+                normal:{//文本标签在环形内部显示
+                    show:false,
+                    position:'center',
+                },
+                emphasis:{//设置标签样式
+                    show:true,//文字是否显示
+                    textStyle: {
+                        fontSize:'15',
+                        fontWeight:'bold'
+                    }
+                }
+
+            },
+            data:[
+
+                {value:234, name:'联盟广告'},
+                {value:135, name:'视频广告'},
+                {value:548, name:'搜索引擎'}
+            ]
+        }
+    ]
+});
+
+var chartfour=echarts.init(document.getElementById('chartfour'));
+chartfour.setOption({
+   xAxis:{
+       show:true,
+       type:'category',
+       data:['00:00','01:00','02:00','03:00','04:00','05:00'],
+       axisLabel:{//x轴字体颜色
+           color:'#fff',
+       },
+       boundaryGap:false,//不留白
+        axisLine: {//坐标轴轴线
+           lineStyle:{
+               color:'#fff'
+           }
+        }
+   },
+   yAxis:{
+       type:'value',
+       axisLabel:{
+           color:'#fff'
+       },
+       axisLine:{
+           lineStyle:{
+               color:'#fff',
+           }
+       },
+       max:10000,
+       min:0,
+       splitNumber:5,//设置y轴间隔
+   },
+    color:['#0409fb','#73727A'],
+    legend:{
+       data:['视频广告','邮件营销'],
+        icon: 'roundRect',
+        textStyle:{
+           color:"#fff",
+        },
+        right:'14%',
+    },
+    tooltip:{
+       trigger:'axis',
+    },
+    series:[
+        {
+            name:'视频广告',
+            type:'line',
+            data:[1200, 2320, 2906, 3340, 3980, 4230],
+            smooth:true,
+            areaStyle:{//   区域的样式
+                normal:{
+                    color:'#4C6DFB'
+                }
+            },
+            itemStyle:{
+                normal:{
+                    color:'#0409fb',
+                    lineStyle:{//线条颜色
+                        color:'#0409fb'
+                    }
+                }
+            },
+            symbolSize:8,
+        },
+        {
+            name:'邮件营销',
+            type:'line',
+            data:[1500, 2820, 3901, 4840, 6900, 7230],
+            smooth:true,
+            areaStyle:{
+                normal:{
+                    color:'#A5A0AE'
+                }
+            },
+            itemStyle:{
+                normal:{
+                    color:'#73727A',
+                    lineStyle:{
+                        color:'#73727A'
+                    }
+                }
+            },
+            symbolSize:8,
+        }
+
+    ]
+
+});
+
+var chartfive=echarts.init(document.getElementById('chartfive'));
+chartfive.setOption({
+    xAxis:{
+        type:'value',
+        axisLine:{//坐标轴轴线
+            lineStyle:{
+                color:'#fff'
+            }
+        }
+    },
+    tooltip:{
+      trigger:'axis',
+        axisPointer:{
+          type:'shadow'//坐标轴指示器，默认为直线
+        }
+    },
+    legend:{
+      data:['利润','收入','支出'],
+      textStyle:{//图例文字颜色
+          color:'#fff',
+      }
+    },
+    yAxis:{
+        type:'category',
+        data:['周一','周二','周三','周四','周五','周六','周日'],
+        axisLabel:{
+            color:'#fff',
+        },
+        axisLine:{
+          lineStyle:{
+              color:'#fff'
+          }
+        },
+        axisTick:{
+            show:false
+        }
+    },
+    grid: {//网格位置
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true//区域是否包含坐标轴的刻度标签。
+    },
+    series:[
+        {
+            name:'利润',
+            type:'bar',
+            label:{//柱形条上文本
+              normal:{
+                  show:true,
+                  position: 'inside'
+              }
+            },
+            data:[200, 170, 240, 244, 200, 220, 210]
+        },
+        {
+            name:'收入',
+            type:'bar',
+            stack:'总量',//数据堆叠，同个类目轴上系列配置相同的stack值后，后一个系列的值会在前一个系列的值上相加。
+            label:{
+              normal:{
+                  show:true
+              }
+            },
+            data:[320, 302, 341, 374, 390, 450, 420]
+        },
+        {
+            name:'支出',
+            type:'bar',
+            stack:'总量',
+            label:{
+              normal:{
+                  show:true,
+                  position:'left'
+              }
+            },
+            data:[-120, -132, -101, -134, -190, -230, -210]
+        }
     ]
 });
