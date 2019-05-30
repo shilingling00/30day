@@ -436,3 +436,309 @@ chartfive.setOption({
         }
     ]
 });
+
+var chartsix=echarts.init(document.getElementById('chartsix'));
+chartsix.setOption({
+   xAxis:{
+       type:'category',
+       data:['周一','周二','周三','周四','周五','周六','周日'],
+       axisLine:{//坐标轴轴线和文字颜色
+           lineStyle:{
+               color:'#fff'
+           }
+       }
+   },
+    yAxis:{
+       type:'value',
+        axisLine:{
+           lineStyle:{
+               color:'#fff'
+           }
+        }
+    },
+    legend:{
+      icon:'roundRect',
+      data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎','百度','谷歌','必应','其他'],
+        textStyle:{
+          color:'#fff'
+        }
+    },
+    tooltip:{
+      trigger:'axis',
+        axisPointer:{
+          type:'shadow'
+        }
+    },
+    series:[
+        {
+            type:'bar',
+            name:'直接访问',
+            data:[320, 332, 301, 334, 390, 330, 320]
+        },
+        {
+            name:'邮件营销',
+            type:'bar',
+            stack: '广告',
+            data:[120, 132, 101, 134, 90, 230, 210]
+        },
+        {
+            name:'联盟广告',
+            type:'bar',
+            stack: '广告',
+            data:[220, 182, 191, 234, 290, 330, 310]
+        },
+        {
+            name:'视频广告',
+            type:'bar',
+            stack: '广告',
+            data:[150, 232, 201, 154, 190, 330, 410]
+        },
+        {
+            name:'搜索引擎',
+            type:'bar',
+            data:[862, 1018, 964, 1026, 1679, 1600, 1570],
+            markLine : {//图表标线
+                lineStyle: {//标线的样式
+                    normal: {
+                        type: 'dashed'
+                    }
+                },
+                data : [//标线的数据数组
+                    [{type : 'min'}, {type : 'max'}]
+                ]
+            }
+        },
+        {
+            name:'百度',
+            type:'bar',
+            barWidth : 5,//柱条的宽度
+            stack: '搜索引擎',
+            data:[620, 732, 701, 734, 1090, 1130, 1120]
+        },
+        {
+            name:'谷歌',
+            type:'bar',
+            stack: '搜索引擎',
+            data:[120, 132, 101, 134, 290, 230, 220]
+        },
+        {
+            name:'必应',
+            type:'bar',
+            stack: '搜索引擎',
+            data:[60, 72, 71, 74, 190, 130, 110]
+        },
+        {
+            name:'其他',
+            type:'bar',
+            stack: '搜索引擎',
+            data:[62, 82, 91, 84, 109, 110, 120]
+        }
+    ]
+
+});
+
+var chartseven=echarts.init(document.getElementById('chartseven'));
+chartseven.setOption({
+   xAxis:{
+       type:'category',
+       data:['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+       axisLine:{
+           lineStyle:{
+               color:'#ccc6c6'
+           }
+       }
+   },
+    yAxis:{
+       type:'value',
+        axisLine:{
+           lineStyle:{
+               color:'#ccc6c6'
+           }
+        }
+    },
+    series:[
+        {
+            type:'line',
+            data: [120, 200, 150, 80, 70, 110, 130],
+            lineStyle:{//折线的样式
+                normal:{
+                    color:'green',
+                    type:'dashed',//虚线
+                    width:4,
+                }
+            },
+            symbol:'triangle',//折线交点的形状
+            symbolSize:10,//大小
+            itemStyle:{
+                normal:{
+                    lineStyle:{
+                      color:'#eee'
+                    },
+                    borderWidth:3,//折点边框
+                    borderColor:'yellow',//折点边框颜色
+                    color:'blue',//折点颜色
+                }
+            }
+        }
+    ]
+});
+
+var charteight=echarts.init(document.getElementById('charteight'));
+charteight.setOption({
+   xAxis:{
+       type:'category',
+       data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+       axisPointer:{
+           type:'shadow'
+       },
+       axisLine:{
+           lineStyle:{
+               color:'#fff'
+           }
+       }
+   },
+    yAxis:[
+        {
+            type:'value',
+            name:'水量',
+            max:250,
+            interval:50,
+            axisLabel:{
+                formatter: '{value}ml'
+            },
+            axisLine:{
+                lineStyle:{
+                    color:'#fff'
+                }
+            }
+        },
+        {
+            type:'value',
+            name:'温度',
+            max:25,
+            min:0,
+            interval:5,
+            axisLabel:{
+                formatter:'{value}°C'
+            },
+            axisLine:{
+                lineStyle:{
+                    color:'#fff'
+                }
+            }
+        },
+    ],
+    tooltip:{
+      trigger:'axis',
+    },
+    legend:{
+      data:['蒸发量','降水量','平均温度'],
+        textStyle:{
+          color:'#fff'
+        }
+    },
+    series:[
+        {
+            name:'蒸发量',
+            type:'bar',
+            data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+        },
+        {
+            name:'降水量',
+            type:'bar',
+            data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+        },
+        {
+            name:'平均温度',
+            type:'line',
+            yAxisIndex:1,//在单个图表实例中存在多个 y轴的时候有用。
+            data:[2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
+        }
+    ]
+});
+
+var chartnine=echarts.init(document.getElementById('chartnine'));
+chartnine.setOption({
+    tooltip:{
+      formatter:"{a} <br/>{b}: {c} ({d}%)",
+        trigger:'item',
+    },
+    legend:{
+        orient: 'vertical',
+        x: 'left',
+        data:['直达','营销广告','搜索引擎','邮件营销','联盟广告','视频广告','百度','谷歌','必应','其他'],
+        textStyle:{
+            color:"#fff"
+        }
+    },
+   series:[
+       {
+           name:'访问来源',
+           type:'pie',
+           selectedMode:'single',
+           radius: ['0','30%'],
+           label:{
+             normal:{
+                 position:'inner',
+             }
+           },
+           data:[
+               {value:335, name:'直达', selected:true},
+               {value:679, name:'营销广告'},
+               {value:1548, name:'搜索引擎'}
+           ]
+       },
+       {
+           name:'访问来源',
+           type:'pie',
+           radius:['40%','55%'],
+           label:{
+               normal:{
+                   formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+                   backgroundColor:'#eee',
+                   borderWidth:1,
+                   borderColor:'#aaa',
+                   borderRadius:4,
+                   rich:{
+                       a:{
+                           color:'#999',
+                           lineHeight:24,
+                           align:'center',
+                       },
+                       hr:{
+                           borderColor:'#aaa',
+                           width:'100%',
+                           borderWidth:0.5,
+                           height:0,
+                       },
+                       b:{
+                           fontSize: 16,
+                           height: 33,
+                       },
+                       per:{
+                           color:'#eee',
+                           backgroundColor:'#334455',
+                           padding:[2,4],
+                           borderRadius: 2
+                       }
+
+                   }
+               },
+
+
+           },
+           data:[
+               {value:335, name:'直达'},
+               {value:310, name:'邮件营销'},
+               {value:234, name:'联盟广告'},
+               {value:135, name:'视频广告'},
+               {value:1048, name:'百度'},
+               {value:251, name:'谷歌'},
+               {value:147, name:'必应'},
+               {value:102, name:'其他'}
+           ]
+       }
+
+   ]
+
+});
