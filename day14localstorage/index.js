@@ -35,12 +35,12 @@ function addhtml(items=[],list) {
 
 //图标的切换
 function toggledone(e){
-    //if (!e.target.matches('input')) return; // 跳过所有的input，只处理label
+    if (!e.target.matches('input')) return; // 跳过所有的input，只处理label
     let target=e.target;
     console.log(target);
     let i=target.dataset.index;
     console.log(i);
-    items[i].done=!items[i].done;
+    items[i].done = !items[i].done;
     localStorage.setItem('item',JSON.stringify(items));
     addhtml(items,list)
 }
@@ -71,7 +71,7 @@ function dobutton(e) {
 addhtml(items,list);
 
 // 在关闭浏览器之后清除缓存
-window.onbeforeunload=function (e) {
-    localStorage.removeItem('item');
-
-}
+// window.onbeforeunload=function (e) {
+//     localStorage.removeItem('item');
+//
+// }

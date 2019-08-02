@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .a{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+            top:0;left:0;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="checkbox" v-model="all">全选<br>
+    <input type="checkbox" v-for="p in product"  v-model="p.isselect">
+    <br>
+    <input type="text" v-model="a">{{msg}}
+    <br>
+    <input type="text" v-model="val">{{fullname}}
+    <br>
+    <button @click="cut=!cut">点击</button>
+    <template v-if="cut">
+        <label>注册</label>
+        <input type="text" key="1">
+    </template>
+    <template v-else>
+        <label>登陆</label>
+        <input type="text" key="2">
+    </template>
+    <br>
+    <div class="a" v-drag></div>
+    <br>
+    <input type="radio" v-model="radio" value="home">home
+    <input type="radio" v-model="radio" value="list">list
+    <keep-alive>
+        <component :is="radio"></component>
+    </keep-alive>
+
+</div>
+</body>
+</html>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+    let home={
+        template:'<div>home</div>'
+    };
+    let list={
+        template:'<div ref="child">list</div>'
+    };
+    let vm=new Vue({
+        el:'#app',
+        data:{
+            product:[{isselect:true},{isselect:true}],
+            a:'',
+            msg:'',
+            firstname:'apple',
+            lastname:'onion',
+            val:'',
+            cut:true,
+            radio:'home',
+        },
+        methods:{
+
+        },
+        filters:{
+
+        },
+        directives:{//自定义指令
+          drag(el){
+              el.onmousedown=function (e) {
+                  var x=e.pageX-el.offsetLeft;
+                  var y=e.pageY-el.offsetTop;
+                  document.onmousemove=function (e) {
+                      el.style.left=e.pageX-x+'px';
+                      el.style.top=e.pageY-y+'px';
+                  };
+                  document.onmouseup=function () {
+                      document.onmousemove=document.onmouseup =null
+                  };
+                  e.preventDefault();
+              }
+          }
+        },
+        computed:{
+            all:{
+                get(){
+                    return this.product.every(item=>{
+                        return item.isselect
+                    })
+                },
+                set(val){
+                    this.product.forEach(item=>{
+                        item.isselect=val;
+                    })
+                }
+            },
+            fullname:{
+                get(){
+                    return this.firstname+this.val+this.lastname;
+                }
+            }
+        },
+        watch:{//只有值变化的时候才会触发，支持异步
+            a(newvalue,oldvlaue){
+                console.log(newvalue,oldvlaue)
+                if(newvalue.length<3){
+                    return this.msg='太短了'
+                }
+                if(newvalue.length>6){
+                    return this.msg='太长了'
+                }
+                this.msg=''
+            }
+        },
+        beforeCreate(){
+
+        },
+        created(){
+
+        },
+        beforeMount(){
+
+        },
+        mounted(){
+            this.$nextTick(()=>{
+                //console.log(this.$refs.child.$el.innerHTML);
+            })
+        },
+        beforeUpdate(){
+
+        },
+        updated(){
+
+        },
+        beforeDestroy(){
+
+        },
+        destroyed(){
+
+        },
+        components:{
+            home,
+            list,
+        }
+    })
+</script>
